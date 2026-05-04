@@ -1,0 +1,187 @@
+/* src/main/resources/css/style.css - Light Theme Only */
+
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f5f7fa;
+}
+
+/* Menu Bar */
+.menu-bar {
+    -fx-background-color: #2c3e50;
+}
+
+.menu-bar .menu .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.menu-bar .menu:hover {
+    -fx-background-color: #1abc9c;
+}
+
+.menu-item .label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ToolBar */
+.tool-bar {
+    -fx-background-color: #ecf0f1;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1f618d;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #1abc9c;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}
+
+/* Text Fields */
+.text-field, .text-area, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 3;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+}
+
+.text-field:prompt, .text-area:prompt {
+    -fx-prompt-text-fill: #95a5a6;
+}
+
+/* Labels */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.label-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Progress Bar */
+.progress-bar {
+    -fx-accent: #1abc9c;
+}
+
+.progress-bar .bar {
+    -fx-padding: 2px;
+}
+
+/* Tab Pane */
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 8 15 8 15;
+}
+
+.tab:selected {
+    -fx-background-color: #3498db;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+}
+
+/* Card Effect */
+.card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* SplitPane */
+.split-pane {
+    -fx-background-color: #f5f7fa;
+}
+
+.split-pane-divider {
+    -fx-background-color: #bdc3c7;
+}
+
+/* Separator */
+.separator .line {
+    -fx-border-color: #bdc3c7;
+}
+
+/* Pagination */
+.pagination {
+    -fx-background-color: transparent;
+}
+
+.pagination .page {
+    -fx-background-color: #ecf0f1;
+}
+
+.pagination .pagination-control {
+    -fx-background-color: transparent;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #ecf0f1;
+}
+
+/* Prompt Text styling */
+.text-field, .text-area {
+    -fx-prompt-text-fill: #95a5a6;
+}
+
+.combo-box {
+    -fx-prompt-text-fill: #95a5a6;
+}

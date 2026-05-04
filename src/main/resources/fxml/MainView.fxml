@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehicleidentification.controller.MainController">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Export to CSV" onAction="#exportToCSV"/>
+            <MenuItem text="Print" onAction="#printView"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Exit" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="View">
+            <MenuItem text="Dashboard" onAction="#showDashboardView"/>
+            <MenuItem text="Refresh" onAction="#handleRefresh"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="Recent Activities" onAction="#showRecentActivities"/>
+            <MenuItem text="About" onAction="#handleAbout"/>
+            <MenuItem text="Keyboard Shortcuts" onAction="#showShortcuts"/>
+        </Menu>
+    </MenuBar>
+
+    <ToolBar>
+        <Button text="Dashboard" onAction="#showDashboardView"/>
+        <Button text="Vehicles" onAction="#showVehicleView"/>
+        <Button text="Customers" onAction="#showCustomerView"/>
+        <Button text="Workshop" onAction="#showWorkshopView"/>
+        <Button text="Insurance" onAction="#showInsuranceView"/>
+        <Button text="Police" onAction="#showPoliceView"/>
+        <Separator orientation="VERTICAL"/>
+        <Button text="📋 Browse Records" onAction="#showBrowseRecords" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Separator orientation="VERTICAL"/>
+        <Label fx:id="statusLabel" text="Ready"/>
+        <Separator orientation="VERTICAL"/>
+        <Label fx:id="timeLabel" text="--:--:--"/>
+    </ToolBar>
+
+    <!-- Main Content Area -->
+    <SplitPane dividerPositions="0.20" VBox.vgrow="ALWAYS">
+        <!-- Sidebar -->
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <Label text="Quick Stats" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label fx:id="statsVehicles" text="Vehicles: 0"/>
+            <Label fx:id="statsCustomers" text="Customers: 0"/>
+            <Label fx:id="statsServices" text="Services: 0"/>
+            <Label fx:id="statsViolations" text="Unpaid: 0"/>
+        </VBox>
+
+        <!-- Dynamic Content Area -->
+        <AnchorPane fx:id="contentArea"/>
+    </SplitPane>
+
+    <!-- Footer -->
+    <VBox spacing="5" style="-fx-background-color: #ecf0f1; -fx-padding: 5 10 5 10;">
+        <Separator/>
+        <HBox alignment="CENTER_RIGHT" spacing="20">
+            <Label fx:id="recordCountLabel" text="Ready" style="-fx-text-fill: #7f8c8d;"/>
+        </HBox>
+    </VBox>
+</VBox>

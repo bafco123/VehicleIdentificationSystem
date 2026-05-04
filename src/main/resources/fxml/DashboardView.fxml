@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehicleidentification.controller.DashboardController">
+
+    <Label text="Dashboard" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Statistics Cards Row -->
+    <HBox spacing="15">
+        <!-- Card 1: Total Vehicles -->
+        <VBox style="-fx-background-color: #3498db; -fx-padding: 20; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label text="🚗 Total Vehicles" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label fx:id="totalVehicles" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- Card 2: Total Customers -->
+        <VBox style="-fx-background-color: #27ae60; -fx-padding: 20; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label text="👤 Total Customers" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label fx:id="totalCustomers" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- Card 3: Active Policies -->
+        <VBox style="-fx-background-color: #f39c12; -fx-padding: 20; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label text="📄 Active Policies" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label fx:id="activePolicies" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- Card 4: Unpaid Violations -->
+        <VBox style="-fx-background-color: #e74c3c; -fx-padding: 20; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+            <Label text="⚠️ Unpaid Violations" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label fx:id="unpaidViolations" text="0" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Charts Section -->
+    <TabPane>
+        <Tab text="Vehicles by Make">
+            <BarChart fx:id="vehicleChart" title="Vehicles by Make" prefHeight="400" prefWidth="800">
+                <xAxis>
+                    <CategoryAxis label="Vehicle Make"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Number of Vehicles"/>
+                </yAxis>
+            </BarChart>
+        </Tab>
+
+        <Tab text="Monthly Service Revenue">
+            <LineChart fx:id="revenueChart" title="Monthly Service Revenue" prefHeight="400" prefWidth="800">
+                <xAxis>
+                    <CategoryAxis label="Month"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Revenue ($)"/>
+                </yAxis>
+            </LineChart>
+        </Tab>
+
+        <Tab text="Violation Types">
+            <PieChart fx:id="violationChart" title="Violations by Type" prefHeight="400" prefWidth="800"/>
+        </Tab>
+    </TabPane>
+
+    <!-- Last Updated Label -->
+    <Label fx:id="lastUpdatedLabel" style="-fx-text-fill: #7f8c8d; -fx-font-size: 11px;"/>
+</VBox>

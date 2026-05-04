@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehicleidentification.controller.InsuranceController">
+
+    <Label text="Insurance Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TabPane>
+        <!-- Insurance Policies Tab -->
+        <Tab text="Insurance Policies">
+            <VBox spacing="10">
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Vehicle ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="vehicleIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Insurance Company:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="companyField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Policy Number:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="policyNumberField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Start Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="startDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="End Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="endDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Coverage Details:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="coverageField" prefHeight="80" prefWidth="300"/>
+
+                    <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <Button text="Add Policy" onAction="#addPolicy"/>
+                        <Button text="Delete Policy" onAction="#deletePolicy"/>
+                        <Button text="Clear" onAction="#clearForm"/>
+                    </HBox>
+                </GridPane>
+
+                <Separator/>
+
+                <TableView fx:id="policyTable" prefHeight="250">
+                    <columns>
+                        <TableColumn text="Policy ID" fx:id="colPolicyId" prefWidth="60"/>
+                        <TableColumn text="Vehicle ID" fx:id="colVehicleId" prefWidth="80"/>
+                        <TableColumn text="Company" fx:id="colCompany" prefWidth="150"/>
+                        <TableColumn text="Policy #" fx:id="colPolicyNumber" prefWidth="120"/>
+                        <TableColumn text="Start Date" fx:id="colStartDate" prefWidth="100"/>
+                        <TableColumn text="End Date" fx:id="colEndDate" prefWidth="100"/>
+                        <TableColumn text="Coverage" fx:id="colCoverage" prefWidth="200"/>
+                        <TableColumn text="Status" fx:id="colStatus" prefWidth="80"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- Claims Tab -->
+        <Tab text="Claims">
+            <VBox spacing="10">
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Policy ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="claimPolicyIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Claim Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="claimDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Claim Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="claimAmountField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Description:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="claimDescriptionField" prefHeight="60" prefWidth="300"/>
+
+                    <Label text="Status:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="claimStatusCombo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <Button text="Add Claim" onAction="#addClaim"/>
+                        <Button text="Update Status" onAction="#updateClaimStatus"/>
+                        <Button text="Delete Claim" onAction="#deleteClaim"/>
+                        <Button text="Clear" onAction="#clearClaimForm"/>
+                    </HBox>
+                </GridPane>
+
+                <Separator/>
+
+                <TableView fx:id="claimTable" prefHeight="250">
+                    <columns>
+                        <TableColumn text="Claim ID" fx:id="colClaimId" prefWidth="60"/>
+                        <TableColumn text="Policy ID" fx:id="colClaimPolicyId" prefWidth="80"/>
+                        <TableColumn text="Claim Date" fx:id="colClaimDate" prefWidth="100"/>
+                        <TableColumn text="Amount" fx:id="colClaimAmount" prefWidth="100"/>
+                        <TableColumn text="Description" fx:id="colClaimDescription" prefWidth="200"/>
+                        <TableColumn text="Status" fx:id="colClaimStatus" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <ProgressIndicator fx:id="progressIndicator" visible="false" prefWidth="40"/>
+</VBox>

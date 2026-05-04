@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehicleidentification.controller.VehicleController">
+
+    <Label text="Vehicle Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Search Bar with clear prompt -->
+    <HBox spacing="10">
+        <Label text="Search:"/>
+        <TextField fx:id="searchField" promptText="Enter registration, make, model, or year..." HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="filterCombo" prefWidth="120"/>
+        <Button text="Clear" onAction="#clearSearch"/>
+    </HBox>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Registration Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="regNumberField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="ABC123"/>
+
+        <Label text="Make:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="makeField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Toyota, Honda, Ford..."/>
+
+        <Label text="Model:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="modelField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Camry, Civic, Mustang..."/>
+
+        <Label text="Year:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="yearField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="2020-2026"/>
+
+        <Label text="Owner ID:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="ownerIdField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Enter existing customer ID"/>
+
+        <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2">
+            <Button text="Add Vehicle" onAction="#addVehicle"/>
+            <Button text="Update" onAction="#updateVehicle"/>
+            <Button text="Delete" onAction="#deleteVehicle"/>
+            <Button text="Clear" onAction="#clearForm"/>
+        </HBox>
+    </GridPane>
+
+    <Separator/>
+
+    <TableView fx:id="vehicleTable" prefHeight="400">
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="60"/>
+            <TableColumn text="Registration" fx:id="colRegNumber" prefWidth="150"/>
+            <TableColumn text="Make" fx:id="colMake" prefWidth="120"/>
+            <TableColumn text="Model" fx:id="colModel" prefWidth="120"/>
+            <TableColumn text="Year" fx:id="colYear" prefWidth="80"/>
+            <TableColumn text="Owner Name" fx:id="colOwnerName" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <ProgressIndicator fx:id="progressIndicator" visible="false" prefWidth="30"/>
+        <ProgressBar fx:id="progressBar" prefWidth="200" visible="false"/>
+    </HBox>
+</VBox>
