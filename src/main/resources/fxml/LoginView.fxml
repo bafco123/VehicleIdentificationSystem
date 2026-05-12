@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox alignment="CENTER" spacing="25" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vehicleidentification.controller.LoginController"
+      style="-fx-background-color: #f5f7fa;">
+
+    <VBox alignment="CENTER" spacing="15">
+        <!-- Car Icon -->
+        <Label text="🚗" style="-fx-font-size: 70px; -fx-text-fill: #3498db; -fx-effect: dropshadow(gaussian, #3498db, 15, 0.3, 0, 0);">
+            <effect>
+                <DropShadow color="#3498db" radius="10" spread="0.2"/>
+            </effect>
+        </Label>
+
+        <Label text="Vehicle Identification System"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-letter-spacing: 1px;">
+            <font>
+                <Font name="Segoe UI" size="28"/>
+            </font>
+        </Label>
+
+        <Label text="Secure Access Portal"
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 0 0 10 0;"/>
+    </VBox>
+
+    <!-- Login Card -->
+    <VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);">
+
+        <Label text="LOGIN" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-alignment: center; -fx-padding: 0 0 10 0;"/>
+
+        <GridPane hgap="15" vgap="15" alignment="CENTER">
+            <!-- Username Field -->
+            <Label text="Username" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-fill: #7f8c8d; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+            <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="250"
+                       promptText="Enter your username"
+                       style="-fx-background-color: white; -fx-text-fill: #2c3e50; -fx-prompt-text-fill: #95a5a6; -fx-background-radius: 8; -fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 8;">
+                <effect>
+                    <DropShadow color="#000000" radius="2" spread="0.05"/>
+                </effect>
+            </TextField>
+
+            <!-- Password Field -->
+            <Label text="Password" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-fill: #7f8c8d; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="250"
+                           promptText="Enter your password"
+                           style="-fx-background-color: white; -fx-text-fill: #2c3e50; -fx-prompt-text-fill: #95a5a6; -fx-background-radius: 8; -fx-padding: 10; -fx-border-color: #ddd; -fx-border-radius: 8;">
+                <effect>
+                    <DropShadow color="#000000" radius="2" spread="0.05"/>
+                </effect>
+            </PasswordField>
+
+            <!-- Buttons -->
+            <HBox spacing="15" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+                <Button text="🔓 LOGIN" onAction="#handleLogin"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 35 10 35; -fx-background-radius: 25; -fx-cursor: hand;">
+                    <effect>
+                        <DropShadow color="#3498db" radius="8" spread="0.15"/>
+                    </effect>
+                </Button>
+                <Button text="🗑 CLEAR" onAction="#clearForm"
+                        style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 35 10 35; -fx-background-radius: 25; -fx-cursor: hand;">
+                    <effect>
+                        <DropShadow color="#95a5a6" radius="5" spread="0.1"/>
+                    </effect>
+                </Button>
+            </HBox>
+        </GridPane>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" style="-fx-text-fill: #e74c3c; -fx-font-size: 12px; -fx-alignment: center; -fx-padding: 10 0 0 0;"/>
+
+        <!-- Decorative Line -->
+        <Separator style="-fx-background-color: #ecf0f1;"/>
+
+    </VBox>
+
+    <!-- Footer -->
+    <Label text="Vehicle Identification System | All Rights Reserved"
+           style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-padding: 20 0 0 0;"/>
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+</VBox>
